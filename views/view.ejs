@@ -1,0 +1,51 @@
+<section>
+    <h2>All Student Records</h2>
+
+    <form method="GET" action="/view" class="inline-filter">
+        <label>Filter by class:</label>
+        <input name="class" value="<%= classFilter || '' %>" />
+        <button type="submit">Filter</button>
+        <a href="/view" class="btn-small">Clear</a>
+    </form>
+
+    <% if (students.length===0) { %>
+        <p>No records found.</p>
+        <% } else { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Class</th>
+                        <th>Adm No</th>
+                        <th>Roll</th>
+                        <th>Address</th>
+                        <th>Mobile</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% students.forEach(s=> { %>
+                        <tr>
+                            <td>
+                                <%= s.name %>
+                            </td>
+                            <td>
+                                <%= s.class %>
+                            </td>
+                            <td>
+                                <%= s.adm_no %>
+                            </td>
+                            <td>
+                                <%= s.roll_no %>
+                            </td>
+                            <td>
+                                <%= s.address %>
+                            </td>
+                            <td>
+                                <%= s.mob_no %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+            <% } %>
+</section>

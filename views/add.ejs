@@ -1,0 +1,31 @@
+<section class="form-wrap">
+    <h2>Add Student</h2>
+
+    <% if (error) { %>
+        <p class="msg error">
+            <%= error %>
+        </p>
+        <% } %>
+
+            <form method="POST" action="/add">
+                <label>Name</label>
+                <input name="name" required />
+
+                <label>Class</label>
+                <input name="class" required />
+
+                <label>Admission No</label>
+                <input name="adm" required type="number" />
+
+                <label>Roll No</label>
+                <input name="roll" type="number" />
+
+                <label>Address</label>
+                <input name="addr" />
+
+                <label>Mobile</label>
+                <input name="mob" type="tel" />
+
+                <button type="submit">Add Record</button>
+            </form>
+</section>

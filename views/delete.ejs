@@ -1,0 +1,15 @@
+<section class="form-wrap">
+    <h2>Delete Student Record</h2>
+
+    <% if (error) { %>
+        <p class="msg error">
+            <%= error %>
+        </p>
+        <% } %>
+
+            <form method="POST" action="/delete">
+                <label>Admission No</label>
+                <input name="adm" required type="number" />
+                <button type="submit">Delete</button>
+            </form>
+</section>
